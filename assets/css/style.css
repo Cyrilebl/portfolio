@@ -215,11 +215,11 @@ footer img {
   }
 
   .intro__text {
-    margin: 0px 25px;
+    margin: 0px 15px;
   }
 
   .intro h1 {
-    font-size: 3em;
+    font-size: 2.8em;
     width: 100%;
     padding-top: 40px;
     margin-bottom: 40px;
@@ -229,6 +229,7 @@ footer img {
   .intro p {
     font-size: 1em;
     width: 100%;
+    padding: 0 15px;
     margin-bottom: 40px;
     text-align: center;
   }
@@ -262,7 +263,7 @@ footer img {
 
   .projects h1 {
     margin: 35px 25px 40px 25px;
-    font-size: 2.5em;
+    font-size: 2.2em;
   }
 
   #grid {
