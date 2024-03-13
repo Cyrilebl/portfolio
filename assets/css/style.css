@@ -53,14 +53,20 @@ footer img {
 /* Introduction */
 
 .intro {
+  background-image: url(../images/pattern-rings.svg);
+  background-repeat: no-repeat;
+  background-position: -60px 40px;
+}
+
+.intro__text {
   margin: 0px 180px;
 }
 
 .intro h1 {
-  font-size: 5.5em;
+  font-size: 5.1em;
   font-weight: 700;
-  width: 70%;
-  margin-top: 130px;
+  width: 65%;
+  padding-top: 130px;
   margin-bottom: 60px;
 }
 
@@ -72,14 +78,14 @@ footer img {
 .intro p {
   font-size: 1.2em;
   width: 50%;
-  margin-bottom: 325px;
+  margin-bottom: 312px;
 }
 
 .intro__img {
   width: 550px;
   position: absolute;
   top: 0;
-  right: 120px;
+  right: 180px;
   z-index: -1;
 }
 
@@ -97,13 +103,15 @@ footer img {
 
 .skills h2 {
   font-size: 3em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Projects */
 
 .projects {
-  margin: 40px 180px 140px 180px;
+  background-image: url(../images/pattern-rings.svg);
+  background-repeat: no-repeat;
+  background-position: 1120px 50px;
 }
 
 .projects a {
@@ -111,15 +119,16 @@ footer img {
 }
 
 .projects h1 {
+  margin: 40px 180px 60px 180px;
   font-size: 4.6em;
   font-weight: 700;
-  margin-bottom: 60px;
   text-decoration: underline 5px var(--green);
   text-underline-offset: 10px;
   color: var(--white);
 }
 
 #grid {
+  margin: 0 180px 140px 180px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
@@ -182,4 +191,91 @@ footer img {
 
 .hover a:hover {
   color: var(--green);
+}
+
+@media all and (max-width: 1280px) {
+  /* Header - Footer */
+
+  header,
+  footer {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  header {
+    margin: 30px 20px;
+  }
+
+  /* Introduction */
+
+  .intro {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .intro__text {
+    margin: 0px 25px;
+  }
+
+  .intro h1 {
+    font-size: 3em;
+    width: 100%;
+    padding-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: 1em;
+    width: 100%;
+    margin-bottom: 80px;
+    text-align: center;
+  }
+
+  .intro__img {
+    width: 200px;
+    position: initial;
+    z-index: 0;
+  }
+
+  /* Skills */
+
+  .skills {
+    margin: 0px 25px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .skills h2 {
+    font-size: 2em;
+  }
+
+  /* Projects */
+
+  .projects {
+    background-position: 500px 50px;
+    text-align: center;
+  }
+
+  .projects h1 {
+    margin: 20px 25px 40px 25px;
+    font-size: 2.5em;
+  }
+
+  #grid {
+    margin: 0 25px 80px 25px;
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .grid__project h2 {
+    font-size: 1.2em;
+  }
+
+  .grid__project p {
+    font-size: 1em;
+  }
 }
