@@ -55,6 +55,7 @@ footer img {
 .intro {
   background-image: url(../images/pattern-rings.svg);
   background-repeat: no-repeat;
+  padding-top: 130px;
   background-position: -60px 40px;
 }
 
@@ -62,23 +63,78 @@ footer img {
   margin: 0px 180px;
 }
 
-.intro h1 {
-  font-size: 5.1em;
-  font-weight: 700;
-  width: 65%;
-  padding-top: 130px;
-  margin-bottom: 60px;
+.type-animation {
+  display: inline-block;
+  margin-bottom: 70px;
 }
 
-.intro span {
+.type-animation h1 {
+  font-size: 5.1em;
+  font-weight: 700;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 5px solid var(--white);
+}
+
+.type-animation h1:nth-child(1) {
+  animation: typing 1.5s steps(17) forwards,
+    cursor 0.4s step-end infinite alternate;
+}
+
+.type-animation h1:nth-child(2) {
+  opacity: 0;
+  animation: typing2 1.5s steps(18), cursor 0.4s step-end infinite alternate;
+  animation-delay: 1.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    border-right: none;
+  }
+}
+
+@keyframes typing2 {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.intro__text span {
   text-decoration: underline 5px var(--green);
   text-underline-offset: 10px;
 }
 
-.intro p {
+.intro__text p {
   font-size: 1.2em;
-  width: 50%;
-  margin-bottom: 312px;
+  width: 55%;
+  margin-bottom: 302px;
+  opacity: 0;
+  animation: textappear 2s;
+  animation-delay: 3.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes textappear {
+  0% {
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .intro__img {
@@ -193,7 +249,22 @@ footer img {
   color: var(--green);
 }
 
-@media all and (max-width: 1280px) {
+@media all and (max-width: 1450px) {
+  .type-animation h1 {
+    font-size: 4em;
+  }
+
+  .intro__text p {
+    width: 50%;
+    margin-bottom: 242px;
+  }
+
+  .intro__img {
+    width: 500px;
+  }
+}
+
+@media all and (max-width: 1270px) {
   /* Header - Footer */
 
   header,
@@ -212,30 +283,32 @@ footer img {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    padding-top: 0;
   }
 
   .intro__text {
     margin: 0px 15px;
-  }
-
-  .intro h1 {
-    font-size: 2.8em;
-    width: 100%;
-    padding-top: 40px;
-    margin-bottom: 40px;
     text-align: center;
   }
 
-  .intro p {
+  .type-animation {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .type-animation h1 {
+    font-size: 2.8em;
+  }
+
+  .intro__text p {
     font-size: 1em;
     width: 100%;
     padding: 0 15px;
     margin-bottom: 40px;
-    text-align: center;
   }
 
   .intro__img {
-    width: 200px;
+    width: 40%;
     position: initial;
     z-index: 0;
   }
