@@ -30,7 +30,8 @@ footer {
 header {
   margin: 30px 180px;
   opacity: 0;
-  animation: opacity 3s forwards;
+  filter: blur(5px);
+  animation: opacity 2s forwards;
   position: relative;
   z-index: 1;
 }
@@ -106,10 +107,9 @@ footer img {
   width: 55%;
   margin-bottom: 302px;
   opacity: 0;
-  filter: blur(8px);
-  transform: translateX(-100%);
-  animation: margin 1.5s linear forwards;
-  animation-delay: 1s;
+  filter: blur(5px);
+  animation: opacity 2s forwards;
+  animation-delay: 1.5s;
 }
 
 .intro__img {
@@ -295,6 +295,9 @@ footer img {
   .type-animation {
     margin-top: 40px;
     margin-bottom: 40px;
+    opacity: 0;
+    filter: blur(5px);
+    animation: opacity 2s forwards;
   }
 
   .type-animation h1 {
@@ -316,20 +319,15 @@ footer img {
     width: 100%;
     padding: 0 15px;
     margin-bottom: 40px;
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(-0);
-    animation: none;
+    animation-delay: 0s;
   }
 
   .intro__img {
     width: 40%;
     position: initial;
     z-index: 0;
-    opacity: 1;
-    filter: blur(0);
     transform: translateX(0);
-    animation: none;
+    animation: opacity 2s forwards;
   }
 
   /* Skills */
