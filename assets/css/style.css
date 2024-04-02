@@ -53,6 +53,7 @@ footer a {
 header img,
 footer img {
   width: 50px;
+  height: 100%;
 }
 
 /* Introduction */
@@ -113,7 +114,6 @@ footer img {
 }
 
 .intro__img {
-  width: 550px;
   position: absolute;
   top: -120px;
   right: 180px;
