@@ -60,9 +60,6 @@ footer img {
   background-repeat: no-repeat;
   padding-top: 130px;
   background-position: -60px 40px;
-  animation: fade-out linear forwards;
-  animation-timeline: view();
-  animation-range: exit 100px;
 }
 
 .intro__text {
@@ -111,7 +108,7 @@ footer img {
 
 .intro__img {
   position: absolute;
-  top: -120px;
+  top: 0;
   right: 180px;
   z-index: -1;
   @extend %opacity-blur;
@@ -155,12 +152,12 @@ footer img {
 .projects__title {
   margin: 60px 180px 60px 180px;
   @extend %opacity-blur;
-  transform: translateX(-100%);
   font-size: 4.2em;
   font-weight: 700;
   text-decoration: underline 5px $green;
   text-underline-offset: 10px;
   color: $white;
+  scale: 0;
   transition: 1.3s;
 }
 
@@ -179,6 +176,7 @@ footer img {
 
 .show {
   opacity: 1;
+  scale: 1;
   filter: blur(0);
   transform: translateX(0);
   transform: translateY(0);

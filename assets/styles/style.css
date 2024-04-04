@@ -30,11 +30,6 @@
   85% {
     scale: 1;
     opacity: 1; } }
-@keyframes fade-out {
-  70%,
-  100% {
-    opacity: 0;
-    scale: 3; } }
 header, .intro__text p, .intro__img, .projects__title, .grid__project {
   opacity: 0;
   filter: blur(5px); }
@@ -86,10 +81,7 @@ footer img {
   background-image: url(../images/pattern-rings.svg);
   background-repeat: no-repeat;
   padding-top: 130px;
-  background-position: -60px 40px;
-  animation: fade-out linear forwards;
-  animation-timeline: view();
-  animation-range: exit 100px; }
+  background-position: -60px 40px; }
 
 .intro__text {
   margin: 0px 180px; }
@@ -128,7 +120,7 @@ footer img {
 
 .intro__img {
   position: absolute;
-  top: -120px;
+  top: 0;
   right: 180px;
   z-index: -1;
   transform: translateX(100%);
@@ -163,12 +155,12 @@ footer img {
 
 .projects__title {
   margin: 60px 180px 60px 180px;
-  transform: translateX(-100%);
   font-size: 4.2em;
   font-weight: 700;
   text-decoration: underline 5px #01dfa3;
   text-underline-offset: 10px;
   color: white;
+  scale: 0;
   transition: 1.3s; }
 
 #grid {
@@ -183,6 +175,7 @@ footer img {
 
 .show {
   opacity: 1;
+  scale: 1;
   filter: blur(0);
   transform: translateX(0);
   transform: translateY(0); }
