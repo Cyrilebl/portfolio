@@ -49,11 +49,3 @@
     opacity: 1;
   }
 }
-
-@keyframes fade-out {
-  70%,
-  100% {
-    opacity: 0;
-    scale: 3;
-  }
-}
