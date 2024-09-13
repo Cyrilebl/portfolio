@@ -60,55 +60,15 @@ footer img {
   background-repeat: no-repeat;
   background-position: 60px 50px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 60px 250px;
+  margin: 60px 0;
+  gap: 30px;
+  min-height: 100%;
 }
 
-.intro__left {
-  width: 60%;
-}
-
-.type-animation {
-  display: inline-block;
-}
-
-.type-animation h1 {
-  font-size: 4em;
-  font-weight: 700;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 5px solid $white;
-}
-
-.type-animation h1:nth-child(1) {
-  animation: typing 1.3s steps(12) forwards,
-    cursor 0.4s step-end infinite alternate;
-}
-
-.type-animation h1:nth-child(2) {
-  opacity: 0;
-  animation: typing2 1.1s steps(18), cursor 0.4s step-end infinite alternate;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-}
-
-.intro__left span {
-  text-decoration: underline 5px $green;
-  text-underline-offset: 10px;
-}
-
-.intro__left p {
-  font-size: 1.1em;
-  width: 80%;
-  margin-top: 60px;
-  @extend %opacity-blur;
-  animation: opacity 2s forwards;
-  animation-delay: 1s;
-}
-
-.intro__right {
+.intro__top {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -117,7 +77,7 @@ footer img {
   animation: margin 1.5s ease forwards;
 }
 
-.intro__right--curriculum {
+.intro__top a {
   color: $white;
   font-size: 1.1em;
   text-transform: uppercase;
@@ -130,9 +90,54 @@ footer img {
   transition: text-decoration 0.5s, text-underline-offset 0.5s;
 }
 
-.intro__right--curriculum:hover {
+.intro__top a:hover {
   text-decoration-color: transparent;
   text-underline-offset: 20px;
+}
+
+.intro__bottom {
+  text-align: center;
+  padding: 0 400px;
+}
+
+.type-animation {
+  display: inline-block;
+}
+
+.type-animation h1 {
+  font-size: 4em;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 5px solid $white;
+}
+
+.type-animation h1:nth-child(1) {
+  display: inline-block;
+  animation: typing 1.1s steps(12) forwards,
+    cursor 0.4s step-end infinite alternate;
+}
+
+.type-animation h1:nth-child(2) {
+  opacity: 0;
+  animation: typing2 1.1s steps(18), cursor 0.4s step-end infinite alternate;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.intro__bottom span {
+  text-decoration: underline 5px $green;
+  text-underline-offset: 10px;
+}
+
+.intro__bottom p {
+  font-size: 1.1em;
+  margin-top: 30px;
+  @extend %opacity-blur;
+  animation: opacity 2s forwards;
+  animation-delay: 1s;
 }
 
 /* Skills */
@@ -260,17 +265,13 @@ footer img {
   color: $green;
 }
 
-@media all and (max-width: 1600px) {
-  .type-animation h1 {
-    font-size: 3em;
-  }
-
-  .intro__left p {
-    width: 80%;
+@media all and (max-width: 1500px) {
+  .intro__bottom {
+    padding: 0 280px;
   }
 }
 
-@media all and (max-width: 1350px) {
+@media all and (max-width: 1250px) {
   /* Header - Footer */
 
   header,
@@ -286,15 +287,22 @@ footer img {
   /* Introduction */
 
   .intro {
-    flex-direction: column-reverse;
     animation: none;
-    gap: 40px;
     margin: 40px 0px;
   }
 
-  .intro__left {
+  .intro__top {
+    transform: translateX(0);
+    animation: opacity 2s forwards;
+  }
+
+  .intro__top a {
+    font-size: 1em;
+  }
+
+  .intro__bottom {
     margin: 0px 15px;
-    text-align: center;
+    padding: 0 0;
   }
 
   .type-animation {
@@ -304,7 +312,7 @@ footer img {
   }
 
   .type-animation h1 {
-    font-size: 2.8em;
+    font-size: 3em;
     border-right: 0;
     white-space: wrap;
   }
@@ -318,17 +326,11 @@ footer img {
     animation: none;
   }
 
-  .intro__left p {
+  .intro__bottom p {
     font-size: 1em;
     width: 100%;
     padding: 0 15px;
-    margin-top: 40px;
     animation-delay: 0s;
-  }
-
-  .intro__img {
-    transform: translateX(0);
-    animation: opacity 2s forwards;
   }
 
   /* Skills */
@@ -357,7 +359,7 @@ footer img {
 
   .projects__title {
     margin: 35px 25px 40px 25px;
-    font-size: 2.2em;
+    font-size: 2.5em;
   }
 
   #grid {
