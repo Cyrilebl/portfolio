@@ -134,9 +134,12 @@ footer img {
 
 .type-animation h1:nth-child(2) {
   opacity: 0;
-  animation: typing2 1.1s steps(18), cursor 0.4s step-end infinite alternate;
+  animation: typing2 1.1s steps(18), cursor 0.4s step-end 4 alternate;
   animation-delay: 1s;
   animation-fill-mode: forwards; }
+
+.type-animation h1.cursor-end {
+  border-right: none; }
 
 .intro__bottom span {
   text-decoration: underline 5px #01dfa3;
