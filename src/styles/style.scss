@@ -2,6 +2,10 @@
 @import "./_animations.scss";
 @import "./placeholders.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 ::before,
 ::after {
@@ -26,23 +30,39 @@ footer {
 }
 
 header {
-  margin: 30px 250px;
+  margin: 30px 300px;
   @extend %opacity-blur;
   animation: opacity 2s forwards;
   position: relative;
   z-index: 1;
 }
 
-footer {
-  border-top: 1px solid $white;
-  background-color: $footer;
-  padding: 20px 250px;
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
-header a,
-footer a {
-  text-decoration: none;
+nav a {
   color: $white;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: $green;
+}
+
+footer {
+  border-top: 1px solid $border;
+  background-color: $footer;
+  padding: 20px 300px;
+}
+
+header .title,
+footer .title {
+  color: $white;
+  text-decoration: none;
   font-size: 1.8em;
   font-weight: 800;
 }
@@ -55,7 +75,7 @@ footer img {
 
 /* Introduction */
 
-.intro {
+#intro {
   background-image: url(../../assets/images/pattern-rings.svg);
   background-repeat: no-repeat;
   background-position: 570px 0;
@@ -63,7 +83,7 @@ footer img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px 0 60px 0;
+  margin: 35px 0 60px 0;
   gap: 40px;
   min-height: 100%;
 }
@@ -97,7 +117,6 @@ footer img {
 
 .intro__bottom {
   text-align: center;
-  padding: 0 400px;
 }
 
 .type-animation {
@@ -138,6 +157,7 @@ footer img {
 
 .intro__bottom p {
   font-size: 1.1em;
+  line-height: 1.3em;
   margin-top: 30px;
   @extend %opacity-blur;
   animation: opacity 2s forwards;
@@ -146,31 +166,31 @@ footer img {
 
 /* Skills */
 
-.skills {
+#skills {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid $white;
-  border-bottom: 1px solid $white;
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
   padding: 40px 0;
 }
 
-.skills div {
+#skills div {
   scale: 0.9;
   opacity: 0;
   animation: fade-in linear;
   animation-timeline: view();
 }
 
-.skills h2 {
+#skills h2 {
   font-size: 2.8em;
   font-weight: 500;
   margin-top: 10px;
   margin-bottom: 30px;
 }
 
-.skills h3 {
+#skills h3 {
   font-size: 1.1em;
   color: $secondary-text;
 }
@@ -199,20 +219,16 @@ footer img {
 
 /* Projects */
 
-.projects {
+#projects {
   background-image: url(../../assets/images/pattern-rings.svg);
   background-repeat: no-repeat;
   background-position: 1120px 25px;
 }
 
-.projects a {
-  text-decoration: none;
-}
-
 .projects__title {
-  margin: 60px 250px;
+  margin: 60px 300px;
   @extend %opacity-blur;
-  font-size: 3.5em;
+  font-size: 3.2em;
   font-weight: 700;
   text-decoration: underline 5px $green;
   text-underline-offset: 10px;
@@ -222,7 +238,7 @@ footer img {
 }
 
 #grid {
-  margin: 0 250px 140px 250px;
+  margin: 0 300px 140px 300px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
@@ -263,7 +279,7 @@ footer img {
 
 .grid__img img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .hover {
@@ -279,7 +295,7 @@ footer img {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .grid__img:hover .hover {
@@ -295,19 +311,40 @@ footer img {
   font-size: 1em;
   font-weight: 500;
   letter-spacing: 3px;
+  transition: 0.2s ease-in-out;
 }
 
 .hover a:hover {
   color: $green;
 }
 
-@media all and (max-width: 1500px) {
-  .intro__bottom {
-    padding: 0 280px;
+@media all and (max-width: 1536px) {
+  header {
+    margin: 30px 100px;
+  }
+
+  footer {
+    padding: 20px 100px;
+  }
+
+  #intro {
+    background-image: none;
+  }
+
+  .projects__title {
+    margin: 60px 100px;
+  }
+
+  #projects {
+    background-image: none;
+  }
+
+  #grid {
+    margin: 0 100px 140px 100px;
   }
 }
 
-@media all and (max-width: 1250px) {
+@media all and (max-width: 1024px) {
   /* Header - Footer */
 
   header,
@@ -320,9 +357,17 @@ footer img {
     margin: 30px 20px;
   }
 
+  nav {
+    display: none;
+  }
+
+  footer {
+    padding: 20px;
+  }
+
   /* Introduction */
 
-  .intro {
+  #intro {
     animation: none;
     margin: 40px 0px;
   }
@@ -338,7 +383,7 @@ footer img {
 
   .intro__bottom {
     margin: 0px 15px;
-    padding: 0 0;
+    padding: 0;
   }
 
   .type-animation {
@@ -371,16 +416,11 @@ footer img {
 
   /* Skills */
 
-  .skills h2 {
+  #skills h2 {
     font-size: 2em;
   }
 
   /* Projects */
-
-  .projects {
-    background-position: 500px 50px;
-    text-align: center;
-  }
 
   .projects__title {
     margin: 35px 25px 40px 25px;

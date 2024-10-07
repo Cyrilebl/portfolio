@@ -24,7 +24,7 @@
   100% {
     opacity: 1; } }
 @keyframes fade-in {
-  10% {
+  15% {
     scale: 1;
     opacity: 1; }
   85% {
@@ -33,6 +33,9 @@
 header, .intro__top, .intro__bottom p, .projects__title, .grid__project {
   opacity: 0;
   filter: blur(5px); }
+
+html {
+  scroll-behavior: smooth; }
 
 *,
 ::before,
@@ -54,20 +57,33 @@ footer {
   align-items: center; }
 
 header {
-  margin: 30px 250px;
+  margin: 30px 300px;
   animation: opacity 2s forwards;
   position: relative;
   z-index: 1; }
 
-footer {
-  border-top: 1px solid #fafafa;
-  background-color: #242424;
-  padding: 20px 250px; }
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px; }
 
-header a,
-footer a {
-  text-decoration: none;
+nav a {
   color: #fafafa;
+  text-decoration: none;
+  transition: 0.2s ease-in-out; }
+
+nav a:hover {
+  color: #01dfa3; }
+
+footer {
+  border-top: 1px solid #7f7e7e;
+  background-color: #242424;
+  padding: 20px 300px; }
+
+header .title,
+footer .title {
+  color: #fafafa;
+  text-decoration: none;
   font-size: 1.8em;
   font-weight: 800; }
 
@@ -77,7 +93,7 @@ footer img {
   height: 100%; }
 
 /* Introduction */
-.intro {
+#intro {
   background-image: url(../../assets/images/pattern-rings.svg);
   background-repeat: no-repeat;
   background-position: 570px 0;
@@ -85,7 +101,7 @@ footer img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px 0 60px 0;
+  margin: 35px 0 60px 0;
   gap: 40px;
   min-height: 100%; }
 
@@ -113,8 +129,7 @@ footer img {
   text-underline-offset: 20px; }
 
 .intro__bottom {
-  text-align: center;
-  padding: 0 400px; }
+  text-align: center; }
 
 .type-animation {
   display: inline-block; }
@@ -147,33 +162,34 @@ footer img {
 
 .intro__bottom p {
   font-size: 1.1em;
+  line-height: 1.3em;
   margin-top: 30px;
   animation: opacity 2s forwards;
   animation-delay: 1s; }
 
 /* Skills */
-.skills {
+#skills {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid #fafafa;
-  border-bottom: 1px solid #fafafa;
+  border-top: 1px solid #7f7e7e;
+  border-bottom: 1px solid #7f7e7e;
   padding: 40px 0; }
 
-.skills div {
+#skills div {
   scale: 0.9;
   opacity: 0;
   animation: fade-in linear;
   animation-timeline: view(); }
 
-.skills h2 {
+#skills h2 {
   font-size: 2.8em;
   font-weight: 500;
   margin-top: 10px;
   margin-bottom: 30px; }
 
-.skills h3 {
+#skills h3 {
   font-size: 1.1em;
   color: #cbcbcb; }
 
@@ -197,17 +213,14 @@ footer img {
   margin: 10px 0; }
 
 /* Projects */
-.projects {
+#projects {
   background-image: url(../../assets/images/pattern-rings.svg);
   background-repeat: no-repeat;
   background-position: 1120px 25px; }
 
-.projects a {
-  text-decoration: none; }
-
 .projects__title {
-  margin: 60px 250px;
-  font-size: 3.5em;
+  margin: 60px 300px;
+  font-size: 3.2em;
   font-weight: 700;
   text-decoration: underline 5px #01dfa3;
   text-underline-offset: 10px;
@@ -216,7 +229,7 @@ footer img {
   transition: 1.3s; }
 
 #grid {
-  margin: 0 250px 140px 250px;
+  margin: 0 300px 140px 300px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px; }
@@ -250,7 +263,7 @@ footer img {
 
 .grid__img img {
   width: 100%;
-  height: 100%; }
+  height: auto; }
 
 .hover {
   background-color: #333130;
@@ -265,7 +278,7 @@ footer img {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  transition: 0.4s ease-in-out; }
+  transition: 0.3s ease-in-out; }
 
 .grid__img:hover .hover {
   opacity: 0.9; }
@@ -278,15 +291,31 @@ footer img {
   padding-bottom: 5px;
   font-size: 1em;
   font-weight: 500;
-  letter-spacing: 3px; }
+  letter-spacing: 3px;
+  transition: 0.2s ease-in-out; }
 
 .hover a:hover {
   color: #01dfa3; }
 
-@media all and (max-width: 1500px) {
-  .intro__bottom {
-    padding: 0 280px; } }
-@media all and (max-width: 1250px) {
+@media all and (max-width: 1536px) {
+  header {
+    margin: 30px 100px; }
+
+  footer {
+    padding: 20px 100px; }
+
+  #intro {
+    background-image: none; }
+
+  .projects__title {
+    margin: 60px 100px; }
+
+  #projects {
+    background-image: none; }
+
+  #grid {
+    margin: 0 100px 140px 100px; } }
+@media all and (max-width: 1024px) {
   /* Header - Footer */
   header,
   footer {
@@ -296,8 +325,14 @@ footer img {
   header {
     margin: 30px 20px; }
 
+  nav {
+    display: none; }
+
+  footer {
+    padding: 20px; }
+
   /* Introduction */
-  .intro {
+  #intro {
     animation: none;
     margin: 40px 0px; }
 
@@ -310,7 +345,7 @@ footer img {
 
   .intro__bottom {
     margin: 0px 15px;
-    padding: 0 0; }
+    padding: 0; }
 
   .type-animation {
     opacity: 0;
@@ -336,14 +371,10 @@ footer img {
     animation-delay: 0s; }
 
   /* Skills */
-  .skills h2 {
+  #skills h2 {
     font-size: 2em; }
 
   /* Projects */
-  .projects {
-    background-position: 500px 50px;
-    text-align: center; }
-
   .projects__title {
     margin: 35px 25px 40px 25px;
     font-size: 2.5em; }

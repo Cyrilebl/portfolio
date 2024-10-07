@@ -25,15 +25,20 @@
     <!-- Header -->
 
     <header>
-      <a href="#">CyrilLeblanc</a>
-      <a href="https://github.com/Cyrilebl" target="_blank">
-        <img src="assets/icons/github-icon.png" alt="GitHub Icon" />
-      </a>
+      <a class="title" href="#">CyrilLeblanc</a>
+      <nav>
+        <a href="#intro">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="https://github.com/Cyrilebl" target="_blank">
+          <img src="assets/icons/github-icon.png" alt="GitHub Icon" />
+        </a>
+      </nav>
     </header>
     <main>
       <!-- Introduction -->
 
-      <section class="intro">
+      <section id="intro">
         <div class="intro__top">
           <img
             src="assets/images/portfolio-portrait.png"
@@ -52,17 +57,17 @@
           </div>
           <p>
             Passionné par les technologies et en reconversion pour devenir
-            développeur web.<br />
-            À la recherche d'une alternance dans le cadre de ma formation avec
-            OpenClassrooms, je souhaite acquérir une expérience pratique et
-            renforcer mes compétences pour devenir un expert du domaine.
+            Développeur Web.<br />
+            Je suis actuellement à la recherche d'une alternance.<br />
+            Mon objectif est d'acquérir une expérience pratique et renforcer mes
+            compétences <br />pour devenir un expert du domaine.
           </p>
         </div>
       </section>
 
       <!-- Skills -->
 
-      <section class="skills">
+      <section id="skills">
         <div>
           <h2>Intégration Web</h2>
           <div class="skills__list">
@@ -103,15 +108,15 @@
           <h2>Back-End</h2>
           <div class="skills__list">
             <div>
-              <img src="./assets/icons/node-js.png" alt="github icon"/ >
+              <img src="./assets/icons/node-js.png" alt="node.js icon"/ >
               <h3>Node.js</h3>
             </div>
             <div>
-              <img src="./assets/icons/express-js.png" alt="github icon"/ >
+              <img src="./assets/icons/express-js.png" alt="express icon"/ >
               <h3>Express</h3>
             </div>
             <div>
-              <img src="./assets/icons/mongo-db.png" alt="github icon"/ >
+              <img src="./assets/icons/mongo-db.png" alt="mongo-db icon"/ >
               <h3>MongoDB</h3>
             </div>
           </div>
@@ -120,8 +125,8 @@
 
       <!-- Projects -->
 
-      <section class="projects">
-        <a href="#grid"><h2 class="projects__title">Projets</h2></a>
+      <section id="projects">
+        <h2 class="projects__title">Projets</h2>
         <div id="grid">
           <!-- Project 1 -->
 
@@ -154,10 +159,7 @@
 
           <div class="grid__project">
             <div class="grid__img">
-              <img
-                src="assets/images/todo-app.jpg"
-                alt="Github user search app preview"
-              />
+              <img src="assets/images/todo-app.jpg" alt="Todo app preview" />
               <div class="hover">
                 <a
                   href="https://todo-app-organiser.netlify.app/"
@@ -291,10 +293,15 @@
     <!-- Footer -->
 
     <footer>
-      <a href="#">CyrilLeblanc</a>
-      <a href="https://github.com/Cyrilebl" target="_blank">
-        <img src="assets/icons/github-icon.png" alt="GitHub Icon" />
-      </a>
+      <a class="title" href="#">CyrilLeblanc</a>
+      <nav>
+        <a href="#intro">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="https://github.com/Cyrilebl" target="_blank">
+          <img src="assets/icons/github-icon.png" alt="GitHub Icon" />
+        </a>
+      </nav>
     </footer>
   </body>
 </html>
