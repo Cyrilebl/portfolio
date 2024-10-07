@@ -153,18 +153,15 @@ footer img {
 
 /* Skills */
 .skills {
-  margin: 0px 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-top: 1px solid #fafafa;
   border-bottom: 1px solid #fafafa;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 60px 0; }
+  padding: 40px 0; }
 
 .skills div {
-  display: flex;
-  align-items: center;
-  gap: 15px;
   scale: 0.9;
   opacity: 0;
   animation: fade-in linear;
@@ -172,7 +169,32 @@ footer img {
 
 .skills h2 {
   font-size: 2.8em;
-  font-weight: 500; }
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 30px; }
+
+.skills h3 {
+  font-size: 1.1em;
+  color: #cbcbcb; }
+
+.skills__list {
+  display: flex;
+  gap: 90px;
+  text-transform: uppercase;
+  margin-bottom: 20px; }
+
+.line {
+  background: #333130;
+  border-radius: 100%;
+  width: 1px;
+  height: 60px; }
+
+.round {
+  background: #01dfa3;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  margin: 10px 0; }
 
 /* Projects */
 .projects {
@@ -314,18 +336,8 @@ footer img {
     animation-delay: 0s; }
 
   /* Skills */
-  .skills {
-    margin: 0px 25px;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 15px;
-    padding: 25px 0;
-    text-align: center; }
-
   .skills h2 {
-    font-size: 2em;
-    scale: 1;
-    opacity: 1;
-    animation: none; }
+    font-size: 2em; }
 
   /* Projects */
   .projects {
