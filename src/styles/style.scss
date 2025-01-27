@@ -425,6 +425,10 @@ footer img {
     font-size: 2em;
   }
 
+  .skills__list {
+    flex-direction: column;
+  }
+
   /* Projects */
 
   .projects__title {
