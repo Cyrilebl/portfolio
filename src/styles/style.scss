@@ -414,6 +414,7 @@ footer img {
 
   .intro__bottom p {
     font-size: 1em;
+    line-height: 1.4em;
     width: 100%;
     padding: 0 15px;
     animation-delay: 0s;
@@ -427,6 +428,7 @@ footer img {
 
   .skills__list {
     flex-direction: column;
+    gap: 30px;
   }
 
   /* Projects */
